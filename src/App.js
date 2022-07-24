@@ -7,6 +7,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(70);
 
+  console.log(currentPage);
   const fetchData = async () => {
     await fetch("https://s3.amazonaws.com/open-to-cors/assignment.json")
       .then((res) => res.json())
@@ -44,6 +45,7 @@ function App() {
           postsPerPage={postsPerPage}
           totalPosts={data.length}
           paginate={paginate}
+          currentPage={currentPage}
         />
       )}
     </div>

@@ -75,13 +75,14 @@ code {
 }
 
 .pagination li.active {
-  background-color: #4caf50;
+  background-color: #771ee3;
   color: white;
-  border: 1px solid #4caf50;
+  border: 1px solid #771ee3;
 }
 
-.pagination li:hover:not(.active) {
+.pagination li.not-active {
   background-color: #ddd;
+  border: 1px solid white;
 }
 
 .page-link {

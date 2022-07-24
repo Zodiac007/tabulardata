@@ -1,23 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Pagination from "./components/Pagination";
+import Table from "./components/Table";
 
 function App() {
+  const [data, setData] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(70);
+
+  const fetchData = async () => {
+    await fetch("https://s3.amazonaws.com/open-to-cors/assignment.json")
+      .then((res) => res.json())
+      .then((data) => {
+        let arrayList = Object.keys(data.products).map((key) => {
+          return [key, data.products[key]];
+        });
+
+        setData(arrayList);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="text">Table data with Descending order of popularity</h1>
+      {data && (
+        <Table
+          data={data}
+          indexOfFirstPost={indexOfFirstPost}
+          indexOfLastPost={indexOfLastPost}
+        />
+      )}
+      {data && (
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={data.length}
+          paginate={paginate}
+        />
+      )}
     </div>
   );
 }

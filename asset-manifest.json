@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tabulardata/static/css/main.865649d7.css",
+    "main.js": "/tabulardata/static/js/main.9b932610.js",
+    "index.html": "/tabulardata/index.html",
+    "main.865649d7.css.map": "/tabulardata/static/css/main.865649d7.css.map",
+    "main.9b932610.js.map": "/tabulardata/static/js/main.9b932610.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.865649d7.css",
+    "static/js/main.9b932610.js"
+  ]
+}

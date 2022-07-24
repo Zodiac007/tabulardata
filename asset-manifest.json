@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/tabulardata/static/css/main.865649d7.css",
-    "main.js": "/tabulardata/static/js/main.9b932610.js",
+    "main.css": "/tabulardata/static/css/main.12230341.css",
+    "main.js": "/tabulardata/static/js/main.d660d38e.js",
     "index.html": "/tabulardata/index.html",
-    "main.865649d7.css.map": "/tabulardata/static/css/main.865649d7.css.map",
-    "main.9b932610.js.map": "/tabulardata/static/js/main.9b932610.js.map"
+    "main.12230341.css.map": "/tabulardata/static/css/main.12230341.css.map",
+    "main.d660d38e.js.map": "/tabulardata/static/js/main.d660d38e.js.map"
   },
   "entrypoints": [
-    "static/css/main.865649d7.css",
-    "static/js/main.9b932610.js"
+    "static/css/main.12230341.css",
+    "static/js/main.d660d38e.js"
   ]
 }
